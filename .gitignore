@@ -1,0 +1,51 @@
+# Python
+*.pyc
+__pycache__/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+data/interim/
+data/external/
+
+# Models
+models/
+
+# Environment
+.env
+.venv/
+env/
+venv/
+
+# Logs
+logs/
+*.log
+
+# Outputs
+output/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook Metadata
+*.ipynb-meta
+
+# Miscellaneous
+*.swp
+*.bak
+*.tmp
+*.old
+
+# TensorBoard
+runs/
