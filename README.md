@@ -16,7 +16,10 @@ A deep learning-based project for classifying plant diseases using convolutional
 PlantDiseaseClassifier is designed to classify plant diseases from images. It uses a convolutional neural network (CNN) to learn and predict diseases in various plants, improving agricultural practices by enabling early and accurate disease detection.
 
 ## Dataset
-The dataset used in this project consists of images of leaves categorized into different disease classes.
+The dataset used in this project consists of images of leaves categorized into different disease classes. In this dataset, 39 different classes of plant leaf images are available, containing a total of 61,486 images. For training the model, we randomly choose 40 images (you can change the number in the code given in data folder) from each class, making the training set balanced and manageable. There is a total of 39 classes that we aim to predict using the CNN model.
+
+You can download the dataset from the following link:
+[Dataset](https://data.mendeley.com/datasets/tywbtsjrjv/1)
 
 ## Model Architecture
 The model is built using PyTorch and consists of multiple convolutional layers followed by fully connected layers. Batch normalization and dropout are used to improve the performance and generalization of the model.
