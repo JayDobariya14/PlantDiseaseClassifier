@@ -3,6 +3,10 @@ from src.model import CNN
 from src.data_utils import load_data, create_data_loaders
 from torchvision import transforms
 
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 # Define transformations
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
@@ -47,3 +51,25 @@ test_acc = accuracy(test_loader)
 print(f"Train Accuracy: {train_acc * 100:.2f}%")
 print(f"Validation Accuracy: {val_acc * 100:.2f}%")
 print(f"Test Accuracy: {test_acc * 100:.2f}%")
+
+# Combine predictions and true labels for the entire dataset
+true_labels, predicted_labels = [], []
+model.eval()
+with torch.no_grad():
+    for inputs, targets in test_loader:
+        inputs, targets = inputs.to(device), targets.to(device)
+        outputs = model(inputs)
+        _, predictions = torch.max(outputs, 1)
+        true_labels.extend(targets.cpu().numpy())
+        predicted_labels.extend(predictions.cpu().numpy())
+
+# Compute confusion matrix
+cm = confusion_matrix(true_labels, predicted_labels)
+
+# Plot confusion matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.xlabel('Predicted Labels')
+plt.ylabel('True Labels')
+plt.title('Confusion Matrix')
+plt.show()
