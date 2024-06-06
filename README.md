@@ -25,7 +25,7 @@ You can download the dataset from the following link:
 The model is built using PyTorch and consists of multiple convolutional layers followed by fully connected layers. Batch normalization and dropout are used to improve the performance and generalization of the model.
 
 Here is the summary of the model:
-![Model Summary](models/model.jpg)
+![Model Summary](images/model.jpg)
 
 ## Installation
 To run this project, ensure you have Python 3.8+ and the following libraries installed:
@@ -63,7 +63,8 @@ After training the model, the performance metrics and results will be displayed,
 Below is an example of the model's performance:
 
 Accuracy: 40.71%
-Confusion Matrix: ![confusion_matrix](models/confusion_matrix.jpg)
+Confusion Matrix: ![confusion_matrix](images/confusion_matrix.jpg)
+
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any feature requests, bug fixes, or improvements.
